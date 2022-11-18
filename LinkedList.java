@@ -1,3 +1,6 @@
+package com.graham.LinkedList;
+
+
 public class LinkedList {
 
     private Node head = null;
