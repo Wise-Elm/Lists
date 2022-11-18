@@ -1,3 +1,6 @@
+package com.graham.LinkedList;
+
+
 public class Node {
 
     private int value;
