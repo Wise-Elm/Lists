@@ -1,10 +1,14 @@
-package com.graham.LinkedList;
+package com.graham.Lists;
 
 
+/**
+A node which can be used to store an integer value and contains a pointer to a possible
+next node.
+ */
 public class Node {
 
-    private int value;
-    private Node next;
+    public int value;
+    public Node next;
 
     public Node(int value) {
         this.value = value;
