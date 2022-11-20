@@ -1,102 +1,12 @@
-package com.graham.LinkedList;
+package com.graham.Lists;
 
 
-public class LinkedList {
-
-    private Node head = null;
-    private Node tail = null;
+public class LinkedList extends List {
 
     public static void main(String[] string) {
     }
 
     public LinkedList() {
-
-    }
-
-    public void append(int value) {
-        // Empty list.
-        if (this.head == null) {
-            this.head = new Node(value);
-
-            // Only one node.
-        } else if (this.tail == null) {
-            Node node = new Node(value);
-            head.setNodeNext(node);
-            this.tail = node;
-
-            // More than one node.
-        } else {
-
-            // Advance node.
-            Node node = this.head;
-
-            while (node.getNodeNext() != null) {
-                node = node.getNodeNext();
-            }
-            Node newNode = new Node(value);
-            node.setNodeNext(newNode);
-            this.tail = newNode;
-        }
-    }
-
-    public Node getHead() {
-        // Return head node.
-        return this.head;
-    }
-
-    public Node getTail() {
-        // Return tail node.
-        return this.tail;
-    }
-
-    public int getLength() {
-        // Return list length.
-        int len = 0;
-
-        // Blank list.
-        if (this.head == null) {
-            return len;
-        }
-
-        // Increment list length.
-        Node node = this.head;
-        len++;
-        while (node.getNodeNext() != null) {
-            len++;
-            node = node.getNodeNext();
-        }
-
-        return len;
-    }
-
-    public String getListValues() {
-        // Return string representation of list values.
-
-        StringBuilder values = new StringBuilder();
-
-        int len = this.getLength();
-
-        // Empty list.
-        if (len == 0) {
-            values = new StringBuilder("List is Empty.");
-            return values.toString();
-
-            // One node in list.
-        } else if (this.head != null && this.tail == null) {
-            values.append(head.getNodeValue());
-            return values.toString();
-
-            // More than one node in list.
-        } else {
-            Node node = this.head;
-            values.append(head.getNodeValue());
-            do {
-                values.append(", ").append(node.getNodeNext().getNodeValue());
-                node = node.getNodeNext();
-            } while (node.getNodeNext() != null);
-
-            return values.toString();
-        }
     }
 
     public Boolean searchValue(int value) {
@@ -159,9 +69,5 @@ public class LinkedList {
             currentNode.setNodeNext(newNode);
             return true;
         }
-    }
-
-    public void deleteList() {
-        this.head = null;
     }
 }
