@@ -1,94 +1,11 @@
 import org.junit.Test;
 
-import com.graham.LinkedList.LinkedList;
+import com.graham.Lists.LinkedList;
 
 import static org.junit.Assert.*;
 
 
 public class LinkedListTest {
-
-    public static void main(String[] string) {
-
-        LinkedListTest llt = new LinkedListTest();
-        llt.testAppend();
-    }
-
-    @Test
-    public void testAppend() {
-        // Test append.
-
-        LinkedList lst = new LinkedList();
-
-        // Test append for empty list.
-        lst.append(1);
-        assertEquals(1, lst.getHead().getNodeValue());
-        assertNull(lst.getTail());
-
-        // Test append for list of length one.
-        lst.append(2);
-        assertEquals(2, lst.getTail().getNodeValue());
-
-        // Test append for list of length greater than one.
-        lst.append(3);
-        assertEquals(3, lst.getTail().getNodeValue());
-    }
-
-    @Test
-    public void testGetHead() {
-        // Test getHead.
-
-        LinkedList lst = new LinkedList();
-        lst.append(1);
-        assertEquals(1, lst.getHead().getNodeValue());
-    }
-
-    @Test
-    public void testGetTaid() {
-        // Test getTail.
-
-        LinkedList lst = new LinkedList();
-        lst.append(1);
-        lst.append(2);
-        assertEquals(2, lst.getTail().getNodeValue());
-
-    }
-
-    @Test
-    public void testGetLength() {
-        // Test getLength.
-
-        LinkedList lst = new LinkedList();
-
-        // Test empty list.
-        assertEquals(0, lst.getLength());
-
-        // Test list with one node.
-        lst.append(1);
-        assertEquals(1, lst.getLength());
-
-        // Test list with multiple nodes.
-        lst.append(2);
-        assertEquals(2, lst.getLength());
-        lst.append(3);
-        assertEquals(3, lst.getLength());
-        lst.append(4);
-        assertEquals(4, lst.getLength());
-    }
-
-    @Test
-    public void testGetListValues() {
-        // Test LinkedList.getListValues.
-
-        LinkedList lst = new LinkedList();
-
-        assertEquals("List is Empty.", lst.getListValues());
-        lst.append(1);
-        assertEquals("1", lst.getListValues());
-        lst.append(2);
-        assertEquals("1, 2", lst.getListValues());
-        lst.append(3);
-        assertEquals("1, 2, 3", lst.getListValues());
-    }
 
     @Test
     public void testSearchValue() {
@@ -137,15 +54,5 @@ public class LinkedListTest {
 
         assertFalse(lst.insert(50, 7));
         assertEquals("0, 5, 1, 2, 6, 3, 4", lst.getListValues());
-    }
-
-    @Test
-    public void testDeleteList() {
-        // Test deleteList.
-
-        LinkedList lst = new LinkedList();
-        lst.append(1);
-        lst.deleteList();
-        assertNull(lst.getHead());
     }
 }
